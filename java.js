@@ -2,6 +2,8 @@
 let humanScore = 0
 let computerScore = 0
 
+
+
 const computerChoice = Math.random();
 
 function getComputerChoice() {
@@ -17,6 +19,8 @@ function getComputerChoice() {
 let option = window.prompt("Please choose rock, paper, or scissors");
 let humanChoice = option.toLowerCase();
 
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 
 
   function getHumanChoice() {
@@ -31,12 +35,13 @@ let humanChoice = option.toLowerCase();
   }
 }
 
-let humanSelection = getHumanChoice();
-let computerSelection = getComputerChoice();
 
 
-
-function playRound(humanChoice, computerChoice) {
+function playRound(i) {
+  if (i >=5) {
+    return;
+  }
+  
   if ((humanSelection === computerSelection)) {
     return "It's a tie!";
   } else if ((humanSelection === "rock") && (computerSelection === "paper")) {
@@ -45,7 +50,7 @@ function playRound(humanChoice, computerChoice) {
     return "You lose, paper beats rock";
   } else if ((humanSelection === "paper") && (computerSelection === "scissors")) {
     result = 'Lose';
-    compWin =++computerScore
+    compWin =++computerScore;
     return "You lose, scissors beats paper";
   } else if ((humanSelection === "scissors") && (computerSelection === "rock")) {
     result = 'Lose';
@@ -57,26 +62,38 @@ function playRound(humanChoice, computerChoice) {
     return "You win, rock beats scissors";
   } else if ((humanSelection === "paper") && (computerSelection === "rock"))  {
     result = 'Win';
-    humanWin = ++humanScore
+    humanWin = ++humanScore;
     return "You win, paper beats rock";
   } else if ((humanSelection === "scissors") && (computerSelection === "paper")) {
     result = 'Win';
     humanWin = ++humanScore;
     return "You win, scissors beats paper";
     }
-    console.log(humanSelection, computerSelection);
-
+  
+  playRound(5)(humanChoice, computerChoice);
   }
+
+
+
+console.log(humanSelection, computerSelection);
+console.log (playRound (''))
+console.log(humanScore, computerScore);
+
+
+
+
+
+
+
+    //playRound(5);
+   // getComputerChoice(5);
+   // getHumanChoice(5);
+  
 
 //playRound(humanSelection, computerSelection);
   
    
-
-console.log (humanSelection, computerSelection);
-console.log (playRound(''));
-console.log(humanScore, computerScore);
-  
-  //function playGame (getComputerChoice, getHumanChoice) {
+//function playGame (getComputerChoice, getHumanChoice) {
 
  // playRound(5)
  // humanChoice(5)
@@ -110,28 +127,7 @@ console.log(humanScore, computerScore);
     
 
 
-      
-
-
-
-
-
-  
-   //playRound(5);
- // getHumanChoice(5);
-        
-
-
-
-
-
-
-
-
-
-
-
- 
+    
 
 
 
