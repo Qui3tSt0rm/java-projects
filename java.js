@@ -42,7 +42,7 @@ if ((humanChoice === computerChoice)) {
     computerScore++;
   } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
     result = "You lose, rock beats scissors";
-    cmputerScore++;
+    computerScore++;
   } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
     result = "You win, rock beats scissors";
     humanScore++;
