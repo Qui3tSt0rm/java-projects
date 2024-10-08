@@ -1,8 +1,6 @@
-let humanScore = 0
-let computerScore = 0
 
 function getComputerChoice() {
-const computerChoice = Math.random();
+let computerChoice = Math.random();
 
   if (computerChoice <= 0.33) {
     return "rock";
@@ -15,6 +13,7 @@ const computerChoice = Math.random();
 
   function getHumanChoice() {
   let humanChoice = window.prompt("Please choose rock, paper, or scissors").toLowerCase();
+
   
     if (humanChoice === "rock") {
     return "rock";
@@ -27,39 +26,118 @@ const computerChoice = Math.random();
   }
   }
 
+  let humanScore = 0;
+  let computerScore = 0;
+
 function playRound(humanChoice, computerChoice) {
+  let result = "";
  
 if ((humanChoice === computerChoice)) {
     result =  "It's a tie!";
   } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
     result = "You lose, paper beats rock";
-    return ++computerScore;
+    computerScore++;
   } else if ((humanChoice === "paper") && (computerChoice === "scissors")) {
     result =  "You lose, scissors beats paper";
-    return ++computerScore;
+    computerScore++;
   } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
     result = "You lose, rock beats scissors";
-    return ++computerScore;
+    cmputerScore++;
   } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
     result = "You win, rock beats scissors";
-    return ++humanScore;
+    humanScore++;
   } else if ((humanChoice === "paper") && (computerChoice === "rock"))  {
     result = "You win, paper beats rock";
-    return ++humanScore;
+    humanScore++;
   } else if ((humanChoice === "scissors") && (computerChoice === "paper")) {
     result = "You win, scissors beats paper";
-    return ++humanScore;
+    humanScore++;
     }
+ console.log(humanChoice, computerChoice);
+ console.log(result);
+ console.log(humanScore, computerScore);
+
   }
+
+  function playGame() {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+    playRound(humanSelection, computerSelection);
+  }
+
+ playGame();
+ playGame();
+ playGame();
+ playGame();
+ playGame();
+
+ function gameOver() {
+  if (computerScore === humanScore) {
+    return "It's a draw!";
+  } else if (computerScore > humanScore) {
+      return "The computer beat you!";
+    } else if 
+      (computerScore < humanScore) {
+      return "You beat the computer!"
+      }
+    }
+
+    console.log(gameOver());
+
+    
+  
+ 
+  
+  
+
+ 
+
+  
+
+
+
+ 
+        
+              
+        
+                  
+                    
+
+
+
+  
+   
+  
+   
+ 
+ 
+
+
+    
+  
+    
+
+
+/*playGame();
+playGame();
+playGame();
+playGame();
+playGame();
+  
+
 
   const humanSelection = getHumanChoice();
   const computerSelection = getComputerChoice();
   
   playRound(humanSelection, computerSelection);
-  console.log(humanSelection, computerSelection);
-  console.log(result);
-  console.log(humanScore, computerScore);
- 
+  playRound(humanSelection, computerSelection);
+  playRound(humanSelection, computerSelection);
+  playRound(humanSelection, computerSelection);
+  playRound(humanSelection, computerSelection);
+
+}
+*/
+  
 
   
 
